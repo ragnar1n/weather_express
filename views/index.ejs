@@ -6,6 +6,7 @@
     <style> body{text-align: center}</style>
 </head>
 <body>
+<%if(error===null){%>>
 <div id="weather">
     <div id="description"><%=description%>></div>
     <h1 id="temp"><%=temp%>></h1>
@@ -19,6 +20,12 @@
         <br>
         <input type="submit" value="Save changes">
     </form>
+    <%}else{%>
+    <div role="alert">
+        <%=error%>
+    </div>
+    <a href="/" role="button">Try again</a>
+    <%}%>
 </div>
 <script src="app.js"></script>
 </body>
